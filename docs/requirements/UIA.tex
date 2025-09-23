@@ -1,0 +1,205 @@
+\documentclass{article}
+\usepackage[a4paper, 
+            left=1in, 
+            right=1.25in, 
+            top=0.9in, 
+            bottom=1in]{geometry}
+\usepackage{vntex}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage{longtable}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf},
+    pdfpagemode=FullScreen,
+}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% \usepackage{atveryend}
+\usepackage{parskip}
+% \usepackage[vietnamese]{babel}
+\fancyhf{}
+\fancyhead[L]{
+ \begin{tabular}{rl}
+    \begin{picture}(25,15)(0,0)
+    \put(0,-8){\includegraphics[width=8mm, height=8mm]{img/hcmut.png}}
+   \end{picture}&
+	\begin{tabular}{l}
+		\textbf{\bf \ttfamily Trường Đại học Bách Khoa}\\
+		\textbf{\bf \ttfamily Khoa Khoa học và Kỹ thuật Máy tính} 
+	\end{tabular} 	
+ \end{tabular}
+}
+
+\fancyfoot[L]{\scriptsize \ttfamily Công Nghệ Phần Mềm (CO3001), Học kỳ 1, Năm học 2025 - 2026}
+
+\renewcommand{\headrulewidth}{0.1pt}
+\renewcommand{\footrulewidth}{0.1pt}
+
+\AtBeginDocument{\renewcommand*\contentsname{Mục lục}}
+\AtBeginDocument{\renewcommand{\listfigurename}{Danh sách hình ảnh}}
+\AtBeginDocument{\renewcommand{\listtablename}{Danh sách bảng biểu}}
+\AtBeginDocument{\renewcommand*\refname{Tài liệu tham khảo}}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+ĐẠI HỌC QUỐC GIA TP. HỒ CHÍ MINH\\
+TRƯỜNG ĐẠI HỌC BÁCH KHOA\\
+KHOA KHOA HỌC VÀ KỸ THUẬT MÁY TÍNH
+\end{center}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=3cm]{img/hcmut.png}
+\end{center}
+\end{figure}
+
+\centering
+\LARGE\textbf{Công Nghệ Phần Mềm} \\
+\LARGE\textbf{(CO3001)} 
+
+\begin{center}
+\rule{14cm}{0.1pt}
+\vspace{0.2cm} \\
+    \textbf{Bài tập lớn} \\
+    \vspace{0.5cm}
+    \textbf{\textit{{\Huge Hệ thống hỗ trợ Tutor}}} \\
+    \vspace{0.5cm}
+    \rule{14cm}{0.1pt}
+\end{center}
+
+\vspace{0.5cm}
+\begin{table}[h]
+\centering
+\begin{tabular}{l l l l}
+    \textbf{GVHD}:      & Mai Đức Trung     &          &     \\  [3pt]
+    \textbf{Nhóm}:      & UIA               &          &     \\  [3pt]
+    \textbf{Sinh viên}: & Nguyễn Trung An   & 2310027  & L04 \\
+                        & Nguyễn Vũ Quốc An & 2310030  & L04 \\
+                        & Phan Hoàng Kiên   & 2311741  & L04 \\
+                        & Lê Quốc Kiệt      & 2311767  & L04 \\
+                        & Trần Gia Kiệt   & 2311784  & L04 \\
+                        & Trần Huỳnh Hạ Lam & 2311805  & L02 \\
+                        & Nguyễn Huy Lượng& 2311997  & L04 \\
+                        
+\end{tabular}
+\end{table}
+\vspace{7cm}
+\centering
+
+\small TP. Hồ Chí Minh, Tháng 9 năm 2025
+\end{titlepage}
+\newpage
+\fancyfoot[R]{\scriptsize \ttfamily Trang {\thepage}/\pageref{LastPageArabic}}
+
+\newpage   
+\section{Tổng quan Dự án}
+
+\subsection{Bối cảnh dự án}
+\quad Tại Trường Đại học Bách Khoa – ĐHQG TP.HCM (HCMUT), chương trình \textbf{Tutor/Mentor} được triển khai như một sáng kiến nhằm hỗ trợ sinh viên trong quá trình học tập, phát triển kỹ năng và nâng cao trải nghiệm học đường. Trong mô hình này, các \textbf{Tutor} (giảng viên, nghiên cứu sinh, hoặc sinh viên năm trên có thành tích xuất sắc) sẽ đồng hành cùng nhóm sinh viên cụ thể, đóng vai trò hướng dẫn, tư vấn học tập và định hướng kỹ năng mềm.  
+
+\quad Tuy nhiên, việc quản lý chương trình Tutor hiện tại còn phụ thuộc nhiều vào quy trình thủ công, thiếu tính hệ thống và khó mở rộng. Nhà trường đặt ra yêu cầu cần một \textbf{hệ thống phần mềm quản lý Tutor/Mentor hiện đại, hiệu quả và tích hợp với hạ tầng công nghệ sẵn có} của HCMUT. Hệ thống không chỉ phục vụ mục tiêu vận hành trơn tru mà còn tạo tiền đề cho việc ứng dụng công nghệ mới (AI, cộng đồng trực tuyến, học tập cá nhân hóa) trong giáo dục đại học.  
+
+\subsection{Mục Đích Dự Án}
+
+\quad Dự án “Hệ thống Quản lý Chương trình Tutor/Mentor tại HCMUT” được triển khai nhằm hiện đại hóa và số hóa toàn bộ quy trình quản lý, kết nối và vận hành chương trình hỗ trợ sinh viên trong học tập và rèn luyện. Đây là một nền tảng phần mềm tích hợp, đóng vai trò trung gian giữa sinh viên, tutor, và các đơn vị quản lý trong trường, từ đó tạo ra một môi trường học tập hiệu quả, minh bạch và có khả năng mở rộng theo nhu cầu.
+
+\quad Hệ thống sẽ vận hành dựa trên hạ tầng công nghệ thông tin sẵn có của HCMUT, bảo đảm đồng bộ và an toàn dữ liệu nhờ vào các dịch vụ tập trung như HCMUT\_SSO và HCMUT\_DATACORE, đồng thời kết nối với HCMUT\_LIBRARY để mở rộng khả năng tiếp cận tài nguyên học tập chính thống. Với định hướng lâu dài, hệ thống không chỉ dừng lại ở việc hỗ trợ quản lý cơ bản mà còn có khả năng phát triển thêm các tính năng nâng cao, như ứng dụng trí tuệ nhân tạo (AI) trong việc gợi ý ghép cặp tutor - mentee hay xây dựng cộng đồng học tập trực tuyến.
+
+\quad Tầm nhìn của dự án là xây dựng một nền tảng thống nhất, giúp: sinh viên dễ dàng tiếp cận sự hỗ trợ và tài nguyên cần thiết; Tutor có công cụ đồng hành hiệu quả; Nhà trường và các phòng ban quản lý chương trình một cách hiện đại, dựa trên dữ liệu và báo cáo đáng tin cậy.
+
+
+\subsection{Các bên liên quan và vai trò}
+
+\begin{itemize}
+    \item \textbf{Sinh viên (Mentee)}  
+    \begin{itemize}
+        \item Vai trò: Người nhận sự hỗ trợ học tập, đăng ký tham gia chương trình, lựa chọn tutor, tham gia các buổi gặp mặt.  
+        \item Kỳ vọng: Được hỗ trợ kịp thời và hiệu quả, có trải nghiệm đăng ký -- đặt lịch -- phản hồi thuận tiện; được tiếp cận nguồn tài liệu học tập chính thống.  
+    \end{itemize}
+
+    \item \textbf{Tutor (Giảng viên, nghiên cứu sinh, sinh viên năm trên)}  
+    \begin{itemize}
+        \item Vai trò: Người cung cấp sự hướng dẫn, hỗ trợ học tập, tổ chức và quản lý các buổi tư vấn.  
+        \item Kỳ vọng: Có công cụ quản lý lịch rảnh, ghi chú buổi gặp, theo dõi tiến bộ mentee; hạn chế thủ tục thủ công, tăng tính chuyên nghiệp.  
+    \end{itemize}
+
+    \item \textbf{Điều phối viên chương trình (Khoa/Bộ môn)}  
+    \begin{itemize}
+        \item Vai trò: Quản lý hoạt động tutor trong phạm vi bộ môn, giám sát tiến độ và chất lượng buổi học.  
+        \item Kỳ vọng: Có dữ liệu báo cáo chính xác về hoạt động tutor, theo dõi được chất lượng hỗ trợ sinh viên, đưa ra quyết định cải thiện chương trình.  
+    \end{itemize}
+
+    \item \textbf{Phòng Đào tạo}  
+    \begin{itemize}
+        \item Vai trò: Khai thác dữ liệu tổng hợp để điều phối nguồn lực , lên kế hoạch chiến lược.  
+        \item Kỳ vọng: Nhận báo cáo trực quan, toàn diện để tối ưu phân bổ tutor, nắm bắt nhu cầu hỗ trợ của sinh viên.  
+    \end{itemize}
+
+    \item \textbf{Phòng Công tác Sinh viên}  
+    \begin{itemize}
+        \item Vai trò: Xem xét kết quả tham gia của sinh viên trong chương trình để cộng điểm rèn luyện hoặc xét học bổng.  
+        \item Kỳ vọng: Hệ thống cung cấp báo cáo minh bạch, dữ liệu đồng bộ để hỗ trợ đánh giá công bằng.  
+    \end{itemize}
+
+    \item \textbf{Ban quản lý hệ thống CNTT của HCMUT}  
+    \begin{itemize}
+        \item Vai trò: Quản lý tích hợp hạ tầng CNTT, bảo đảm an toàn dữ liệu, vận hành hệ thống ổn định.  
+        \item Kỳ vọng: Hệ thống tích hợp đồng bộ với HCMUT\_SSO, HCMUT\_DATACORE và HCMUT\_LIBRARY; đảm bảo tính bảo mật, mở rộng và dễ bảo trì.  
+    \end{itemize}
+
+    \item \textbf{Nhà trường (Ban giám hiệu)}  
+    \begin{itemize}
+        \item Vai trò: Đơn vị chủ quản, định hướng phát triển chương trình Tutor.  
+        \item Kỳ vọng: Nâng cao hiệu quả quản lý, tạo môi trường học tập hiện đại, phù hợp xu hướng giáo dục số.  
+    \end{itemize}
+\end{itemize}
+
+\subsection{Mục tiêu dự án}
+\begin{itemize}
+    \item Xây dựng một hệ thống phần mềm \textbf{quản lý chương trình Tutor/Mentor} toàn diện, hỗ trợ:
+    \begin{itemize}
+        \item Quản lý hồ sơ sinh viên và tutor.  
+        \item Tự động hóa quy trình đăng ký, ghép cặp, đặt lịch, gửi thông báo, và nhắc lịch.  
+        \item Cung cấp công cụ phản hồi -- đánh giá để cải thiện chất lượng học tập.  
+    \end{itemize}
+    \item Đảm bảo hệ thống \textbf{tích hợp với hạ tầng CNTT hiện có} (HCMUT\_SSO, HCMUT\_DATACORE, HCMUT\_LIBRARY).  
+    \item Hỗ trợ công tác quản lý của các phòng ban, cung cấp \textbf{báo cáo chính xác và kịp thời}.  
+    \item Đặt nền móng cho các \textbf{tính năng nâng cao}: AI gợi ý ghép cặp tutor -- mentee, cộng đồng học tập trực tuyến, chương trình hỗ trợ cá nhân hóa.  
+\end{itemize}
+
+\subsection{Phạm vi dự án}
+\textbf{Trong phạm vi:}
+\begin{itemize}
+    \item Quản lý thông tin người dùng (sinh viên, tutor, cán bộ quản lý).  
+    \item Tích hợp hệ thống xác thực và cơ sở dữ liệu trung tâm.  
+    \item Quản lý đăng ký, lịch hẹn, thông báo, và phản hồi buổi học.  
+    \item Cung cấp báo cáo cho khoa, phòng ban và ban quản lý.  
+\end{itemize}
+
+\textbf{Ngoài phạm vi (giai đoạn đầu):}
+\begin{itemize}
+    \item Các tính năng nâng cao như AI ghép cặp thông minh, cộng đồng trực tuyến, hoặc chương trình phi học thuật (sẽ xem xét ở giai đoạn mở rộng).  
+\end{itemize}
+
+
+\section{Phân tích yêu cầu}
+\subsection{Yêu cầu chức năng}
+
+\subsection{Yêu cầu phi chức năng}
+
+\label{LastPageArabic}
+\end{document}
+
