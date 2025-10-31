@@ -1,0 +1,10 @@
+{
+  "name": "@tss/middlewares",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./error": "./error.middleware.js",
+    "./auth": "./auth.middleware.js"
+  }
+}

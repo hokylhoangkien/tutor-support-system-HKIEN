@@ -1,0 +1,11 @@
+{
+  "name": "@tss/redis",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./config": "./config.js",
+    "./service": "./service.js",
+    "./session": "./session.js"
+  }
+}

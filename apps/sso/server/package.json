@@ -1,0 +1,53 @@
+{
+  "name": "@tss/sso-server",
+  "version": "1.0.0",
+  "description": "Backend using Express",
+  "type": "module",
+  "author": "Nguyen Trung An",
+  "contributors": [
+    "Tran Huy Ha Lam",
+    "Nguyen Huy Luong",
+    "Tran Gia Kiet"
+  ],
+  "keywords": [
+    "Express",
+    "MongoDB",
+    "Node.js"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/seeds/seed.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie": "^1.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-validator": "^7.3.0",
+    "helmet": "^8.1.0",
+    "http-errors": "^2.0.0",
+    "mongoose": "^8.19.2",
+    "morgan": "^1.10.1",
+    "@tss/redis": "workspace:*",
+    "@tss/config": "workspace:*",
+    "@tss/utils": "workspace:*",
+    "@tss/middlewares": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "^9.38.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^17.23.1",
+    "jest": "^30.2.0",
+    "jest-environment-node": "^30.2.0",
+    "mongodb-memory-server": "^10.2.3",
+    "supertest": "^7.1.4"
+  }
+}

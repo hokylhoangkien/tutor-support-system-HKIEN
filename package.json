@@ -1,8 +1,9 @@
 {
-  "name": "second-hand-land",
-  "version": "1.0.0",
+  "name": "tutor-support-system",
+  "version": "1.0.1",
   "description": "Fullstack e-learning platform using React + Express",
   "author": "Nguyen Trung An",
+  "type": "module",
   "contributors": [
     "Nguyen Vu Quoc An",
     "Tran Gia Kiet",
@@ -20,8 +21,13 @@
     "E-learning"
   ],
   "license": "MIT",
-  "postinstall": "npm install --prefix client && npm install --prefix server",
   "scripts": {
+    "dev:all": "node ./scripts/start-all.js",
+    "dev:tss": "pnpm --filter @tutor/tss-server dev",
+    "dev:sso": "pnpm --filter @tutor/sso-server dev",
+    "dev:mybk": "pnpm --filter @tutor/mybk-server dev",
+    "dev:lib": "pnpm --filter @tutor/lib-server dev",
+    "dev:datacore": "pnpm --filter @tutor/datacore dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write ."
@@ -34,10 +40,40 @@
     "type": "git",
     "url": "https://github.com/Trung4n/tutor-support-system.git"
   },
+  "dependencies": {
+    "axios": "^1.13.1",
+    "bcryptjs": "^3.0.2",
+    "connect-redis": "^9.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "globals": "^16.4.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.19.2",
+    "morgan": "^1.10.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "redis": "^5.9.0",
+    "vite": "^7.1.12"
+  },
   "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-n": "^17.23.1",
     "eslint-plugin-prettier": "^5.5.4",
-    "prettier": "^3.6.2"
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "jsonwebtoken": "^9.0.2",
+    "pnpm": "^10.20.0",
+    "prettier": "^3.6.2",
+    "turbo": "^2.6.0"
   }
 }
