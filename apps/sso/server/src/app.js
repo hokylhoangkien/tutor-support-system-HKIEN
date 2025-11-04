@@ -10,9 +10,9 @@ import routes from "./routes/index.js";
 import testRoute from "./routes/test.routes.js";
 import { env } from "./config/env.js";
 // eslint-disable-next-line import/no-unresolved
-import { errorHandler } from "@tss/middlewares/error";
-import { AppError } from "@tss/utils/AppError";
-import { sessionMiddleware } from "@tss/redis/session";
+import { errorHandler } from "@shared/middlewares/error";
+import { AppError } from "@shared/utils/AppError";
+import { sessionMiddleware } from "@shared/redis/session";
 
 export const createApp = () => {
   const app = express();

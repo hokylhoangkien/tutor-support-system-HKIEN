@@ -1,10 +1,10 @@
 /* eslint n/no-process-exit: "off" */
 import http from "http";
 import { createApp } from "./app.js";
-import { connectDB, disconnectDB } from "@tss/config/db";
-import { natsWrapper } from "@tss/nats/wrapper";
-import { setupJetStream } from "@tss/nats/setup";
-import { logger } from "@tss/utils/logger";
+import { connectDB, disconnectDB } from "@shared/config/db";
+import { natsWrapper } from "@shared/nats/wrapper";
+import { setupJetStream } from "@shared/nats/setup";
+import { logger } from "@shared/utils/logger";
 import { env } from "./config/env.js";
 
 const bootstrap = async () => {

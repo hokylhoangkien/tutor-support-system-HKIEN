@@ -1,4 +1,4 @@
-import redis from "@tss/redis/client";
+import redis from "@shared/redis/client";
 import { generateOtp } from "../utils/generateOtp.js";
 import { env } from "../config/env.js";
 

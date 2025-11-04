@@ -1,5 +1,5 @@
 {
-  "name": "@tss/config",
+  "name": "@shared/config",
   "version": "1.0.0",
   "type": "module",
   "private": true,

@@ -1,7 +1,7 @@
 import express from "express";
 // import { MailService } from "../services/mail.service.js";
 import { generateOtp } from "../utils/generateOtp.js";
-import { MailService } from "@tss/notifications/service";
+import { MailService } from "@shared/notifications/service";
 const router = express.Router();
 
 router.get("/ping", (req, res) => {

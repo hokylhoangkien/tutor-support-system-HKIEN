@@ -1,9 +1,5 @@
 import { User } from "../models/user.model.js";
-import { AppError } from "@tss/utils/AppError";
-import jwt from 'jsonwebtoken';
-import { env } from "../config/env.js";
-import crypto from 'crypto';
-import { MailService } from "@tss/notifications/service";
+import { AppError } from "@shared/utils/AppError";
 
 export const authService = {
   async login({ username, password }) {

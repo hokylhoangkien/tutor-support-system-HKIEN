@@ -1,4 +1,4 @@
-import { asyncHandler } from "@tss/utils/asyncHandler";
+import { asyncHandler } from "@shared/utils/asyncHandler";
 import { authService } from "../services/auth.service.js";
 import { AppError } from "@tss/utils/AppError";
 

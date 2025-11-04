@@ -1,7 +1,7 @@
 /* eslint n/no-process-exit: "off" */
 import { User } from "../models/user.model.js";
-import { connectDB } from "@tss/config/db";
-import { logger } from "@tss/utils/logger";
+import { connectDB } from "@shared/config/db";
+import { logger } from "@shared/utils/logger";
 import { env } from "../config/env.js";
 import bcrypt from "bcryptjs";
 

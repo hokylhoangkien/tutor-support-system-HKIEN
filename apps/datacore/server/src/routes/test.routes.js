@@ -1,5 +1,5 @@
 import express from "express";
-import { natsWrapper } from "@tss/nats/wrapper";
+import { natsWrapper } from "@shared/nats/wrapper";
 // import { MailService } from "../services/mail.service.js";
 // import { generateOtp } from "../utils/generateOtp.js";
 const router = express.Router();
