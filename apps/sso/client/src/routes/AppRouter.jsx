@@ -1,13 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 
-// UNCOMMENT THE IMPORTS BELOW AS YOU CREATE THE PAGES
-// import LoginPage from '@/pages/LoginPage';
-// import RegisterPage from '@/pages/RegisterPage';
-// import ForgotPasswordPage from '@/pages/ForgotPasswordPage';
-// import ChangePasswordPage from '@/pages/ChangePasswordPage';
-// import ProfilePage from '@/pages/ProfilePage';
+// Import các trang
+import LoginPage from "../pages/AuthPage/LoginPage";
+import ChangePasswordPage from "../pages/AuthPage/ChangePasswordPage";
+// import ResetPasswordByEmailPage from "../pages/AuthPage/ResetPasswordByEmailPage";
+
 import PrivateRouter from "./PrivateRouter";
 
 export default function AppRouter() {
-  // YOUR CODE HERE
+  return (
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/ChangePasswordPage" element={<ChangePasswordPage />} />
+      {/* <Route path="/reset-password" element={<ResetPasswordByEmailPage />} /> */}
+      <Route path="*" element={<LoginPage />} />
+    </Routes>
+  );
 }

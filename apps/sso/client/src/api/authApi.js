@@ -3,7 +3,5 @@
 export const authApi = {
   // YOUR CODE HERE
   // login
-  // register
   // change password
-  // forgot password
 };
