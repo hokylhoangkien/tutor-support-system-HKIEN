@@ -19,16 +19,11 @@ export const changePassword = asyncHandler(async (req, res) => {
 });
 
 export const resetPassword = asyncHandler(async (req, res) => {
-  const username = req.body.username;
-  const mail = req.body.mail;
-
-  const user = await authService.findUser({ username, mail });
-  if (!user) return res.status(400).json({ message: "User not found" });
+  const { username, mail } = req.body;
 
   // Generate token
-  const payload = { username: user.username, mail: user.mail };
+  const payload = { username: username, mail: mail };
   const token = await tokenService.generateToken(payload);
-
   // This url will be sent to user's mail attached with generated Token
   const resetLink = `http://localhost:3002/api/auth/reset-password/${token}`;
   console.log(`http://localhost:3002/api/auth/reset-password/${token}`);
@@ -41,12 +36,12 @@ export const resetPassword = asyncHandler(async (req, res) => {
 export const resetPasswordToken = asyncHandler(async (req, res) => {
   const token = req.params.token;
   const { username, newpassword } = req.body;
-  console.log(newpassword);
-  console.log(token);
 
-  // Verify extrated Token
-  const verified = await tokenService.verifyToken(token);
-  if (!verified) return res.status(401).json({ message: "Unauthorized Access!" });
+  // Incase a specific user put the old password again
+  const isSamePassword = await req.user.comparePassword(newpassword);
+  if (isSamePassword) {
+    return res.status(400).json({ message: "New password cannot be same as old password" });
+  }
 
   // Change password
   const user = await authService.resetPassword({ username, newpassword });
@@ -54,7 +49,6 @@ export const resetPasswordToken = asyncHandler(async (req, res) => {
     await tokenService.clearToken(token);
     return res.status(200).json({ message: "Reset password successfully" });
   }
-  return res.status(400).json({ message: "User not found" });
 });
 
 export const logout = asyncHandler(async (req, res) => {

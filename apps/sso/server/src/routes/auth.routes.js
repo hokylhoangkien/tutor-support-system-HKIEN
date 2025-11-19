@@ -5,6 +5,7 @@ import {
   resetPassword,
   resetPasswordToken,
 } from "../controllers/auth.controller.js";
+import { checkUserExists, attachUserFromToken } from "../middlewares/validate.middleware.js";
 
 export const router = Router();
 
@@ -16,6 +17,6 @@ export const router = Router();
 // router.post("/register", <middleware> ,register);
 router.post("/login", login);
 
-router.post("/reset-password", resetPassword);
+router.post("/reset-password", checkUserExists, resetPassword);
 
-router.post("/reset-password/:token", resetPasswordToken);
+router.post("/reset-password/:token", attachUserFromToken, resetPasswordToken);

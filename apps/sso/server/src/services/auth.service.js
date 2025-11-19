@@ -7,7 +7,8 @@ export const authService = {
     //--------------test test----------------
     const user = await User.findOne({ username: username });
     const validPassword = await user.comparePassword(password);
-    return user && validPassword;
+    if (user == null || !validPassword) return false;
+    return true;
     // --------------------------------------
   },
   async changePassword({ username, currentPassword, newPassword }) {
@@ -18,7 +19,6 @@ export const authService = {
     return user;
   },
   async resetPassword({ username, newpassword }) {
-    console.log(newpassword);
     const user = await User.findOne({ username: username });
     if (user) {
       user.password = newpassword;
