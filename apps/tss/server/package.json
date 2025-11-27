@@ -6,7 +6,6 @@
   "author": "Nguyen Trung An",
   "contributors": [
     "Tran Huy Ha Lam",
-    "Nguyen Huy Luong",
     "Tran Gia Kiet"
   ],
   "keywords": [
@@ -43,7 +42,8 @@
     "@shared/utils": "workspace:*",
     "@shared/middlewares": "workspace:*",
     "@shared/nats": "workspace:*",
-    "@shared/notifications": "workspace:*"
+    "@shared/notifications": "workspace:*",
+    "@shared/cloudinary": "workspace:*"
   },
   "devDependencies": {
     "eslint": "^9.38.0",

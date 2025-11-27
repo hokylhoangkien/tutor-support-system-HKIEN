@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema(
     password: { type: String, required: true },
     role: { type: String, enum: ["tutor", "student", "employee"], default: "student" },
     isActive: { type: Boolean, default: true },
+    failedLoginCount: { type: Number, default: 0 },
     // last login, created at, updated at will be handled by timestamps
   },
   { timestamps: true }

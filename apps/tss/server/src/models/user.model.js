@@ -8,6 +8,18 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+
+    faculty: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Faculty",
+      required: true,
+    },
+
+    major: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Major",
+      required: true,
+    },
     mail: {
       type: String,
       required: true,

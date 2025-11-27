@@ -3,19 +3,29 @@ import http from "http";
 import { createApp } from "./app.js";
 import { connectDB, disconnectDB } from "@shared/config/db";
 import { natsWrapper } from "@shared/nats/wrapper";
+import { setupJetStream } from "@shared/nats/setup";
 import { Subjects } from "@shared/nats/subjects";
 import { logger } from "@shared/utils/logger";
 import { env } from "./config/env.js";
 
 const bootstrap = async () => {
   await connectDB(env.MONGO_URI);
-  await natsWrapper.connect(env.SERVICE_NAME);
-  await natsWrapper.subscribeJetStream({
-    stream: env.NATS_STREAM,
-    consumer: env.NATS_CONSUMER,
-    filter: Subjects.UserCreated,
-    deliver: env.NATS_DELIVERY,
-  });
+  // await natsWrapper.connect(env.SERVICE_NAME);
+
+  try {
+    // await setupJetStream();
+    // Now subscribe to the stream
+    // await natsWrapper.subscribeJetStream({
+    //   stream: env.NATS_STREAM,
+    //   consumer: env.NATS_CONSUMER,
+    //   filter: Subjects.UserCreated,
+    //   deliver: env.NATS_DELIVERY,
+    // });
+    // logger.info(`[NATS] Subscribed to ${Subjects.UserCreated}`);
+  } catch (error) {
+    logger.error("Failed to set up NATS:", error);
+    process.exit(1);
+  }
   const app = createApp();
   const server = http.createServer(app);
 

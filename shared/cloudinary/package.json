@@ -1,0 +1,11 @@
+{
+  "name": "@shared/cloudinary",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./config": "./config.js",
+    "./multer": "./multer.js",
+    "./service": "./service.js"
+  }
+}

@@ -12,6 +12,26 @@ const tutorSchema = new mongoose.Schema({
     trim: true,
     default: "",
   },
+  teachables: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Subject",
+    },
+  ],
+  rating: {
+    average: {
+      type: Number,
+      default: 0,
+    },
+    count: {
+      type: Number,
+      default: 0,
+    },
+  },
+  vector: {
+    type: [Number],
+    default: [],
+  },
 });
 
 export const Tutor = User.discriminator("tutor", tutorSchema);
