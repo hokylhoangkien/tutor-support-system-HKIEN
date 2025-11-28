@@ -3,7 +3,11 @@ node_modules
 pnpm-lock.yaml
 package-lock.json
 .env
+
+
 */nats-data
+
+tmp
 
 *.aux
 *.log
