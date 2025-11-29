@@ -18,14 +18,14 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
-      port: env.PORT,
+      port: 4002, // frontend port
       open: true,
       proxy: {
         "/api": {
-          target: env.VITE_API_URL,
+          target: "http://localhost:3002", // backend đúng port
           changeOrigin: true,
           secure: false,
-          rewrite: (p) => p.replace(/^\/api/, ""),
+          // rewrite: (p) => p.replace(/^\/api/, ""), // giữ /api làm prefix
         },
       },
     },

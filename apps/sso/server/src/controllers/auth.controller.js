@@ -45,20 +45,20 @@ export const sendToken = asyncHandler(async (req, res) => {
   // This url will be sent to user's mail attached with generated Token
   const resetLink = `${env.CORS_ORIGIN}/reset-password?token=${token}`;
   // Send mail to user
-  await MailService.sendToken(mail, resetLink);
+  await MailService.sendToken(mail, { resetLink });
 
-  return res.status(200).json({ essage: "Token has been sent to your email" });
+  return res.status(200).json({ message: "Token has been sent to your email" });
 });
 
 export const resetPassword = asyncHandler(async (req, res) => {
   const token = req.query.token;
   const { newPassword } = req.body;
-  // get token from redis to verify
+
   const key = `token:${token}`;
   const value = await RedisService.get(key);
   if (!value) return res.status(401).json({ message: "Unauthorized token" });
   const username = value.username;
-  // Reset password
+
   await AuthService.resetPassword({ username, newPassword });
   RedisService.del(key);
   return res.status(200).json({ message: "Password has been resetted successfully." });
