@@ -13,6 +13,8 @@ import ViewFeedback from "../pages/Feedback/ViewFeedback";
 import SendFeedback from "../pages/Feedback/SendFeedback";
 import ViewTutors from "../pages/ViewTutorsPage";
 // import PrivateRouter from "./PrivateRouter"; // nếu cần dùng sau này
+import TutorProfilePage from "@/pages/TutorProfilePage";
+import AllCoursesPages from "@/pages/AllCoursePages.jsx";
 
 export default function AppRouter() {
   const location = useLocation();
@@ -25,11 +27,12 @@ export default function AppRouter() {
       "/support/question": "Question Detail | Tutor Support System",
       "/feedback": "Feedback | Tutor Support System",
       "/session": "Session Detail | Tutor Support System",
-
+      "/view-tutor-profile": "Tutor Profile | Tutor Support System",
+      "/my-sessions": "My Sessions | Tutor Support System",
       // // từ router 2
       // "/login": "Login | Tutor Support System",
       "/profile": "Profile | Tutor Support System",
-      "/viewtutor": "Tutors | Tutor Support System",
+      "/viewtutors": "Tutors | Tutor Support System",
       "/feedback/detail": "Feedback Detail | Tutor Support System",
       "/feedbacks": "Feedback List | Tutor Support System",
       "/send": "Send Feedback | Tutor Support System",
@@ -51,18 +54,19 @@ export default function AppRouter() {
       <Route path="/Course/:sessionId" element={<SessionDetailPage />} />
       <Route path="/support" element={<Support />} />
       <Route path="/support/question" element={<SupportQuestionDetail />} />
-      <Route path="/feedback" element={<FeedbackPage />} />
-
+      {/*<Route path="/feedback" element={<FeedbackPage />} />*/}
+      <Route path="/view-tutor-profile" element={<TutorProfilePage />} />
+      <Route path="/my-sessions" element={<AllCoursesPages />} />
       {/* <Route path="/login" element={<LoginPage />} /> */}
       <Route path="/profile" element={<Profile />} />
-      <Route path="/viewtutor" element={<ViewTutors />} />
+      <Route path="/viewtutors" element={<ViewTutors />} />
 
-      <Route path="/feedback/detail" element={<FeedbackDetail />} />
-      <Route path="/feedsback" element={<ViewFeedback />} />
+      <Route path="/feedbacks/detail" element={<FeedbackDetail />} />
+      <Route path="/feedbacks" element={<ViewFeedback />} />
       <Route path="/send" element={<SendFeedback />} />
 
       {/* 404 fallback */}
-      <Route path="*" element={<LoginPage />} />
+      {/*<Route path="*" element={<LoginPage />} />*/}
     </Routes>
   );
 }

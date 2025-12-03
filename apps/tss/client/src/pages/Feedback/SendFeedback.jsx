@@ -15,7 +15,7 @@ import {
   Smile,
   ArrowLeft,
 } from "lucide-react";
-import Header from "../,./components/Header.jsx";
+import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.jsx";
 
 const HEADER_TITLE_COLOR = "text-[#0a1f44]";
@@ -89,7 +89,8 @@ export default function SendFeedback() {
 
   const handleSubmit = () => {
     console.log({ selectedTutor, title, content });
-    navigate(-1);
+    navigate("/feedbacks");
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -99,7 +100,7 @@ export default function SendFeedback() {
         {/* Header - Aligned with ViewFeedback base */}
         <div className="flex items-center gap-4 mb-8 sm:mb-12">
           <button
-            onClick={() => navigate("/feedback")}
+            onClick={() => navigate("/feedbacks")}
             className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 hover:bg-gray-200 rounded-full transition-colors"
           >
             <ArrowLeft className={`w-6 h-6 sm:w-8 sm:h-8 ${HEADER_TITLE_COLOR}`} />

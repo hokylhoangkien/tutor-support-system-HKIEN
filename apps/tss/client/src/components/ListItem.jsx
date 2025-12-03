@@ -34,7 +34,10 @@ export default function ListItem({
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const items = itemList.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
+  }
 
   const getPageNumbers = () => {
     const pageNumbers = [];

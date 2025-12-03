@@ -19,6 +19,135 @@ export const feedbackList = [
     avatar:
       "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
     type: "question",
+  },{
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
+  },
+  {
+    id: 1,
+    name: "Nguyễn Vũ Quốc An",
+    date: "Friday 08/04/2025",
+    title: "Title",
+    content: "Feed back content",
+    avatar:
+      "https://api.builder.io/api/v1/image/assets/TEMP/94056da088f34e4161fb673971f19468cfcc93bc",
+    type: "feedback",
   },
   {
     id: 3,

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 // import {Search, ChevronDown} from "lucide-react";
 import ListItem from "../components/ListItem.jsx";
 import { StarIcon } from "lucide-react";
-import Footer from "../../components/Footer.jsx";
-import Header from "../../components/Header.jsx";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function ViewTutorsPage() {
   const getRandomAvatar = (seed) => `https://i.pravatar.cc/150?u=${seed}`;

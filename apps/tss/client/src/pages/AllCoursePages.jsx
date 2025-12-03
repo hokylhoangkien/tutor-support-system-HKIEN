@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Pagin from "../components/pagin";
-import Header from "../components/HomePage/Header";
-import Footer from "../components/HomePage/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 export default function AllCoursesPages() {
   const [sessions, setSessions] = useState([]);
 

@@ -1,8 +1,8 @@
 import React from "react";
-import SectionHeader from "../../components/ProfilePage/SectionHeader";
-import InfoField from "../../components/InfoField";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer.jsx";
+import SectionHeader from "../components/ProfilePage/SectionHeader";
+import InfoField from "../components/ProfilePage/InfoField";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const studentProfile = {
   meta: {

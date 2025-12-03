@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Star } from "lucide-react";
-import Header from "../components/HomePage/Header";
-import Footer from "../components/HomePage/Footer";
-export default function TutorProfile() {
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+export default function TutorProfilePage() {
   const today = new Date();
   const [month, setMonth] = useState(today.getMonth()); // 0-11
   const [year, setYear] = useState(today.getFullYear());
@@ -71,9 +71,6 @@ export default function TutorProfile() {
                     <button className="mr-auto bg-[#1488d8] text-white text-sm px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition">
                       CHAT NOW
                     </button>
-                    <div className="flex items-center gap-1 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
-                      2.3k students
-                    </div>
                     <div className="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-semibold">
                       <Star className="w-4 h-4" />
                       4.8 (2.1k)

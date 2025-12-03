@@ -36,7 +36,7 @@ const FeedbackItem = ({ item }) => {
 
         {/* Updated Link format below */}
         <Link
-          to={`/feedback/detail?id=${item.id}`}
+          to={`/feedbacks/detail?id=${item.id}`}
           className="text-lg sm:text-xl lg:text-2xl text-primary font-roboto hover:underline flex-shrink-0"
         >
           {"View"}
