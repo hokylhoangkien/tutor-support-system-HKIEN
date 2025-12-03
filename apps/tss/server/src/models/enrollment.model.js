@@ -6,19 +6,16 @@ const enrollmentSchema = new mongoose.Schema({
     ref: "Student",
     required: true,
   },
-  subject: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Subject",
-    required: true,
-  },
+  subjects: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Subject",
+      required: true,
+    },
+  ],
   semester: {
     type: String, // "251, 252,..."
     required: true,
-  },
-  status: {
-    type: String,
-    enum: ["in-progress", "dropped", "completed"],
-    default: "in-progress",
   },
 });
 
