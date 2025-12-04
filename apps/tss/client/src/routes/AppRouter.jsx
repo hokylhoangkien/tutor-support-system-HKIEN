@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import HomePage from "../pages/HomePage";
 import ViewCourseDetail from "../pages/ViewDetailCourse/ViewDetailCourse";
 import Support from "../pages/Support/Support";
-import SupportQuestionDetail from "../pages/Support/Question";
+import SupportDetail from "../pages/Support/SupportDetail";
 import SessionDetailPage from "../pages/Session/Session";
 // import LoginPage from "../pages/AuthPage/LoginPage";
 import Profile from "../pages/Profile";
@@ -13,12 +13,13 @@ import ViewFeedback from "../pages/Feedback/ViewFeedback";
 import SendFeedback from "../pages/Feedback/SendFeedback";
 import ViewTutors from "../pages/ViewTutorsPage";
 // import PrivateRouter from "./PrivateRouter"; // nếu cần dùng sau này
-import TutorProfilePage from "@/pages/TutorProfilePage";
-import AllCoursesPages from "@/pages/AllCoursePages.jsx";
+import TutorProfilePage from "../pages/TutorProfilePage";
+import AllCoursesPages from "../pages/AllCoursePages.jsx";
 import ViewFeedbackStudent from "../pages/Feedback/ViewFeedStudent";
 import Progress from "../pages/ProgressPage";
 import SchedulePage from "../pages/SchedulePage/SchedulePage";
-
+import MySched from "../pages/SchedulePage/Mysched.jsx";
+import CreateSession from "../pages/Session/CreateSession";
 export default function AppRouter() {
   const location = useLocation();
 
@@ -34,15 +35,16 @@ export default function AppRouter() {
       "/my-sessions": "My Sessions | Tutor Support System",
       // // từ router 2
       // "/login": "Login | Tutor Support System",
-
+      "/my-schedule": "My Schedule | Tutor Support System",
       "/view-feedback": "View Feedback | Tutor Support System",
       "/schedule": "Schedule | Tutor Support System",
       "/profile": "Profile | Tutor Support System",
       "/progress": "Progress | Tutor Support System",
-      "/viewtutors": "Tutors | Tutor Support System",
+      "/view-tutors": "Tutors | Tutor Support System",
       "/feedback/detail": "Feedback Detail | Tutor Support System",
       "/feedbacks": "Feedback List | Tutor Support System",
       "/send": "Send Feedback | Tutor Support System",
+      "/create-session": "Create Session | Tutor Support System",
     };
 
     document.title = pathTitleMap[location.pathname] || "Tutor Support System";
@@ -60,7 +62,7 @@ export default function AppRouter() {
       <Route path="/Course" element={<ViewCourseDetail />} />
       <Route path="/Course/:sessionId" element={<SessionDetailPage />} />
       <Route path="/support" element={<Support />} />
-      <Route path="/support/question" element={<SupportQuestionDetail />} />
+      <Route path="/support/question" element={<SupportDetail />} />
       {/*<Route path="/feedback" element={<FeedbackPage />} />*/}
       <Route path="/view-tutor-profile" element={<TutorProfilePage />} />
       <Route path="/my-sessions" element={<AllCoursesPages />} />
@@ -68,11 +70,12 @@ export default function AppRouter() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/schedule" element={<SchedulePage />} />
       <Route path="/progress" element={<Progress />} />
-      <Route path="/viewtutors" element={<ViewTutors />} />
-
+      <Route path="/view-tutors" element={<ViewTutors />} />
+      <Route path="/create-session" element={<CreateSession />} />
       <Route path="/feedbacks/detail" element={<FeedbackDetail />} />
       <Route path="/feedbacks" element={<ViewFeedback />} />
       <Route path="/send" element={<SendFeedback />} />
+      <Route path="/my-schedule" element={<MySched />} />
 
       {/* 404 fallback */}
       {/*<Route path="*" element={<LoginPage />} />*/}

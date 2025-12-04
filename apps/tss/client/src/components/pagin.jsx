@@ -41,7 +41,13 @@ export default function Pagin({ sessions }) {
     <section className="bg-white rounded-lg shadow-sm p-6 pb-12">
       {/* HEADER */}
       <div className="flex justify-between items-end mb-6">
-        <h2 className="text-2xl font-bold text-blue-900">My Sessions</h2>
+        <div className="text-2xl font-bold text-blue-900">My Sessions</div>
+
+        <button className={` bg-blue-900 text-xl font-semibold text-white px-4 py-1.5 rounded-full ${role === "tutor" ? "" : "hidden"}`}
+                onClick={() => navigate("/create-session")}>
+          Create Session
+        </button>
+
       </div>
 
       {/* FILTER */}

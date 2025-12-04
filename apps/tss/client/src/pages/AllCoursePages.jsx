@@ -29,7 +29,6 @@ export default function AllCoursesPages() {
     }
   }, []);
 
-  // ✅ Xử lý tạo báo cáo
   const handleCreateReport = () => {
     navigate("/progress");
   };
@@ -40,6 +39,7 @@ export default function AllCoursesPages() {
 
       <div className="w-full bg-[#e8e8e8] font-roboto text-gray-800 mt-16 mb-8">
         <main className="max-w-[1600px] mx-auto p-6 space-y-8">
+
           <Pagin sessions={sessions} />
         </main>
       </div>

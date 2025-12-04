@@ -25,11 +25,13 @@ export default function LoginForm() {
 
     try {
       const res = await authApi.login(username, password);
+      // const res = 100;
       console.log("[LoginForm] API CALLED, response =", res);
-
+      // const token = 10;
       const token = res.data.accessToken;
-      const user = res.data.user;
 
+      const user = res.data.user;
+      // const user = 10;
       // Encode user để truyền qua query
       const encodedUser = encodeURIComponent(JSON.stringify(user));
 

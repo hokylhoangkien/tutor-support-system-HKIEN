@@ -1,84 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 // import {Search, ChevronDown} from "lucide-react";
 import ListItem from "../components/ListItem.jsx";
 import { StarIcon } from "lucide-react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import getById from "./mockDataTutor.js";
+import { useNavigate } from "react-router-dom";
+
+const getRandomAvatar = (seed) => `https://i.pravatar.cc/150?u=${seed}`;
 
 export default function ViewTutorsPage() {
-  const getRandomAvatar = (seed) => `https://i.pravatar.cc/150?u=${seed}`;
-  const firstNames = [
-    "Lionel",
-    "Cristiano",
-    "Taylor",
-    "Son",
-    "Elon",
-    "Bill",
-    "Mark",
-    "Lisa",
-    "Hideo",
-    "Sana",
-    "Jennie",
-    "Robert",
-  ];
-  const lastNames = [
-    "Messi",
-    "Ronaldo",
-    "Swift",
-    "Heung-min",
-    "Musk",
-    "Gates",
-    "Zuckerberg",
-    "Manoban",
-    "Kojima",
-    "Minatozaki",
-    "Kim",
-    "Downey Jr.",
-  ];
-  const subjects = [
-    "Computer Science",
-    "Software Engineering",
-    "Data Science",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Cyber Security",
-    "Web Development",
-    "Cloud Computing",
-  ];
-
-  const generateRandomTutors = (count) => {
-    return Array.from({ length: count }, (_, i) => {
-      const randomFirst = firstNames[Math.floor(Math.random() * firstNames.length)];
-      const randomLast = lastNames[Math.floor(Math.random() * lastNames.length)];
-      const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
-
-      const randomRating = (Math.random() * (5.0 - 4.0) + 4.0).toFixed(1);
-      const randomReviews = (Math.random() * (5.0 - 0.5) + 0.5).toFixed(1) + "k";
-
-      const uniqueSeed = `${randomFirst}${i}${Math.random()}`;
-
-      return {
-        id: i,
-        name: `${randomFirst} ${randomLast}`,
-        rating: randomRating,
-        reviews: randomReviews,
-        subject: randomSubject,
-        seed: uniqueSeed,
-      };
-    });
-  };
-
-  const [tutors, setTutors] = useState([]);
-
+  const navigate = useNavigate();
+  const tutors = getById(-1);
   useEffect(() => {
-    setTutors(generateRandomTutors(700));
   }, []);
 
   function tutorsTab({ item }) {
     const getRandomPicture = (seed) => `https://picsum.photos/seed/${seed}/300/400`;
 
     return (
-      <div
+      <button
+        onClick={() => navigate("/view-tutor-profile?id="+item.id) || window.scrollTo(0, 0)}
         key={item.id}
         className="group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 bg-gray-200"
       >
@@ -106,7 +48,7 @@ export default function ViewTutorsPage() {
             {item.subject}
           </p>
         </div>
-      </div>
+      </button>
     );
   }
 
@@ -130,12 +72,12 @@ export default function ViewTutorsPage() {
   ];
 
   return (
-    <div className="w-full font-roboto text-gray-800">
+    <div className="w-full bg-[#e8e8e8] flex-row justify-center font-roboto text-gray-800">
       <Header />
-      <main className="max-w-[1600px]  mt-20 mx-auto p-6 space-y-8">
-        <section className="bg-white rounded shadow-sm overflow-hidden">
-          <div className="bg-[#1488d8] px-6 py-3">
-            <h2 className="text-white font-bold text-2xl italic">Your Tutor</h2>
+      <main className=" flex-row justify-center mt-20 mx-[20px] p-6 space-y-8">
+        <section className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div className="bg-[#2196f3] px-6 py-3">
+            <h2 className="text-white font-bold text-lg italic">Your Tutor</h2>
           </div>
 
           <div className="grid-cols-12 gap-4 px-6 py-3 text-xs font-bold text-gray-500 uppercase border-b hidden md:grid">
@@ -149,7 +91,7 @@ export default function ViewTutorsPage() {
             {upcomingSessions.map((session) => (
               <div
                 key={session.id}
-                className="grid grid-cols-1 md:grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-gray-50 transition"
+                className="grid grid-cols-1 md:grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-gray-100 transition"
               >
                 <div className="col-span-3 flex items-center gap-3">
                   <img
@@ -183,7 +125,7 @@ export default function ViewTutorsPage() {
             ))}
           </div>
         </section>
-        <ListItem itemList={tutors} itemTab={tutorsTab} title={"Tutors"} columns={4} />
+        <ListItem itemList={tutors} itemTab={tutorsTab} title={"Tutors"} />
       </main>
 
       {/*Footer */}
