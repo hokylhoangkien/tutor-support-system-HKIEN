@@ -64,7 +64,7 @@ export default function ListItem({
       </div>
       {haveSearch && <SearchBar />}
 
-      <div className={`grid gap-6 mb-8 ${getGridClasses(columns)}`}>
+      <div className={`grid gap-14 mb-8 ${getGridClasses(columns)}`}>
         {items.map((item, index) => (
           <ItemTab key={item.id || index} item={item} />
         ))}

@@ -12,7 +12,8 @@ export function getCurrentUser() {
 }
 
 export function getCurrentRole() {
-  return getCurrentUser()?.role || null;
+  // return "tutor";
+  return getCurrentUser()?.role || "";
 }
 
 export function getCurrentToken() {

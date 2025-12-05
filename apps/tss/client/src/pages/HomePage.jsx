@@ -68,7 +68,7 @@ export default function HomePage() {
       console.error("[HomePage] Failed to parse storedUser:", e);
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      window.location.href = "http://localhost:4002/login";
+      // window.location.href = "http://localhost:4002/login";
     }
   }, []);
 

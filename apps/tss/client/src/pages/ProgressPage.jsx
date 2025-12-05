@@ -71,7 +71,7 @@ export default function Progress() {
       <div className="max-w-5xl mx-auto px-6 py-12 mt-12">
         <div className="flex items-center gap-3 mb-6">
           <button
-            onClick={() => navigate("/my-sessions")}
+            onClick={() => navigate(-1)}
             className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full transition-colors"
           >
             <ArrowLeft className="w-6 h-6 text-[#0a1f44]" />

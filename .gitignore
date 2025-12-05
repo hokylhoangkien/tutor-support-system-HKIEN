@@ -3,7 +3,7 @@ node_modules
 pnpm-lock.yaml
 package-lock.json
 .env
-
+.idea/
 
 */nats-data
 

@@ -21,18 +21,15 @@ export default function AllCoursesPages() {
     setRole(currentRole);
 
     if (currentRole === "tutor") {
-      // ✅ Tutor chỉ thấy khóa học của mình
       setSessions(mockCoursesTutor(user?.name || "John Doe"));
     } else {
-      // ✅ Student thấy tất cả tutor
       setSessions(mockCoursesStudent);
     }
   }, []);
 
-  // ✅ Xử lý tạo báo cáo
-  const handleCreateReport = () => {
-    navigate("/progress");
-  };
+  // const handleCreateReport = () => {
+  //   navigate("/progress");
+  // };
 
   return (
     <>
@@ -40,6 +37,7 @@ export default function AllCoursesPages() {
 
       <div className="w-full bg-[#e8e8e8] font-roboto text-gray-800 mt-16 mb-8">
         <main className="max-w-[1600px] mx-auto p-6 space-y-8">
+
           <Pagin sessions={sessions} />
         </main>
       </div>

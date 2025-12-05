@@ -129,7 +129,7 @@ export default function SendFeedback() {
       <div className="max-w-[1440px] mx-auto px-4 mt-10 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="flex items-center gap-4 mb-8 sm:mb-12">
           <button
-            onClick={() => navigate("/feedbacks")}
+            onClick={() => navigate(-1)}
             className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 hover:bg-gray-200 rounded-full transition-colors"
           >
             <ArrowLeft className={`w-6 h-6 sm:w-8 sm:h-8 ${HEADER_TITLE_COLOR}`} />
@@ -138,7 +138,7 @@ export default function SendFeedback() {
           <h1
             className={`text-4xl sm:text-5xl lg:text-[40px] font-bold ${HEADER_TITLE_COLOR} font-roboto`}
           >
-            Back to Feedback
+            Back
           </h1>
         </div>
 

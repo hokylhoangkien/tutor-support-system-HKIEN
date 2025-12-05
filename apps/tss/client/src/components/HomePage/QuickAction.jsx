@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function QuickActions() {
   const actions = [
-    { icon: <UserSearch size={40} />, title: "Match Tutor", desc: "Find your ideal tutor", navigateTo: "/viewtutors" },
+    { icon: <UserSearch size={40} />, title: "Match Tutor", desc: "Find your ideal tutor", navigateTo: "/view-tutors" },
     { icon: <BookOpen size={40} />, title: "Book Session", desc: "Schedule new session", navigateTo: "/404" },
     { icon: <MessageCircle size={40} />, title: "Messages", desc: "Chat with your tutor", navigateTo: "/404" },
     { icon: <MessageSquareMore size={40} />, title: "Feedback", desc: "Share your experience", navigateTo: "/feedbacks" },
